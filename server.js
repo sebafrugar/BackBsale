@@ -7,5 +7,6 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 require('./routes/products.routes')(app); 
-app.listen(8000, () => {
-console.log("Servidor Conectado")})
+const PORT = process.env.PORT || 8000
+
+app.listen(PORT, () => {console.log(`Servidor ${PORT} conectado`)})
